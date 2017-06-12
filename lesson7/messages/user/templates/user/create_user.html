@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>user login</title>
+	</head>
+	<body>
+		<h1>user add</h1>
+		<form action="/user/save_user/" method="POST">
+			{{ error }}
+			{% csrf_token %}
+			<label>user:</label><input type="text" name="username"  /><br/><br/>
+			<label>password:</label><input type="password" name="password"  /><br/><br/>
+			<label>age:</label><input type="text" name="age"  /><br/><br/>
+			<label>tel:</label><input type="text" name="tel"  /><br/><br/>
+			<input type="submit" value="add"/>
+		</form>
+	</body>
+</html>

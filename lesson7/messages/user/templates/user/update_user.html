@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>user login</title>
+	</head>
+	<body>
+		<h1>update user</h1>
+		<form action="/user/modify_update_user/" method="POST">
+			{{ error }}
+			{% csrf_token %}
+			<label>user:</label><input type="text" name="username" value= {{ username }} /><br/><br/>
+			<label>password:</label><input type="password" name="password" value={{ password }}/><br/><br/>
+			<label>age:</label><input type="text" name="age" value={{ age }} /><br/><br/>
+			<label>tel:</label><input type="text" name="tel" value={{ tel }} /><br/><br/>
+			<input type="submit" value="update"/>
+		</form>
+	</body>
+</html>

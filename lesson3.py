@@ -4,15 +4,16 @@ while True:
     command = input('Please input find/list/add/delete/update/exit: ')
     if command.strip() == 'add':
         is_bool = True
-        name = input('Please input like name:age:tel style: ')
-        name_temp = name.strip().split(':')
+        user_info = input('Please input like name:age:tel style: ')
+        name, age, tel = user_info.strip().split(':')
+        # 可以这样使用a,b,c=[1,2,3]
         for user in users:
-            if name_temp[0] == user['name']:
-                print(name_temp[0], ' is exited')
+            if name == user['name']:
+                print(name, ' is exited')
                 is_bool = False
         if is_bool:
-            users.append({'name': name_temp[0], 'age': name_temp[1], 'tel': name_temp[2]})
-            print(name_temp[0], ' is added!')
+            users.append({'name': name, 'age': age, 'tel': tel})
+            print(name, ' is added!')
     if command.strip() == 'delete':
         is_bool = True
         name = input('Please input a name: ')
@@ -43,11 +44,12 @@ while True:
             print ('|{0:<10}|{1:<10}|{2:<10}|'.format(user['name'], user['age'], user['tel']))
     if command.strip() == 'update':
         is_bool = True
-        name = input('Please input name:age:tel style : ')
+        user_info = input('Please input name:age:tel style : ')
+        name, age, tel = user_info
         for user in users:
-            if name.strip().split(':')[0] not in user.values():
+            if name not in user.values():
                 print('user is not exit')
                 is_bool = False
         if is_bool:
-            user.update({'age': name.strip().split(':')[1], 'tel': name.strip().split(':')[2]})
+            user.update({'age': age, 'tel': tel})
             print('update succeed')

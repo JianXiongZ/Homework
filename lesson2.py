@@ -25,3 +25,12 @@ for i in list(range(1, len(l))):
         if l[j - 1] > l[j]:
             l[j - 1], l[j] = l[j], l[j - 1]
 print (l)
+
+# 冒泡排序
+print('冒泡排序')
+list_test = [1, 3, 5, 4, 7, 8, 0, 9]
+for i in range(len(list_test) - 1):
+    for j in range(len(list_test) - 1):
+        if list_test[j] > list_test[j + 1]:
+            list_test[j], list_test[j + 1] = list_test[j + 1], list_test[j]
+print (list_test)
